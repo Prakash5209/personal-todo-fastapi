@@ -1,0 +1,42 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*.so
+
+# Virtual environments
+env/
+venv/
+.vscode/
+.idea/
+
+# Alembic migration pycache
+alembic/**/__pycache__/
+alembic/versions/**/__pycache__/
+
+# macOS system files
+.DS_Store
+
+# Python project files
+*.log
+*.sqlite3
+*.db
+
+# Environment variable/config files
+.env
+.env.*
+
+# Editor-specific
+*.swp
+*~
+.nvim/
+
+# Ignore migrations cache in app folders
+app/**/__pycache__/
+
+# Ignore compiled main/database files
+database.cpython-*.pyc
+main.cpython-*.pyc
+
+# Ignore requirements lock file if not used
+poetry.lock
+Pipfile.lock

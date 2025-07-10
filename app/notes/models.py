@@ -1,13 +1,13 @@
 from sqlalchemy import Boolean, DateTime, ForeignKey, String
 from sqlalchemy.orm import mapped_column,Mapped, relationship
 import datetime
+from typing import TYPE_CHECKING
 
-
-from app.account.models import UserModel
 
 from database import Base
 
-user_table = UserModel.__tablename__ # UserModel table name
+if TYPE_CHECKING:
+    from app.account.models import UserModel
 
 
 class TimeStamp:
@@ -20,14 +20,13 @@ class TimeStamp:
     )
 
 
-
 class TasksModel(Base,TimeStamp): # inheritating TimeStamp - auto manages Timestamp
     __tablename__ = "task_model"
 
     id: Mapped[int] = mapped_column(primary_key=True)
     task: Mapped[str] = mapped_column(String(255))
-    is_completed: Mapped[bool] = mapped_column(Boolean(False))
+    is_completed: Mapped[bool] = mapped_column(Boolean,default=False)
 
-    user_id: Mapped[int] = mapped_column(ForeignKey(user_table + ".id"),unique=True) # one (User) to many (task) relationship
-    usermodel: Mapped["UserModel"] = relationship(back_populates="tasks") # access UserModel data from TasksModel with 'tasks'
+    user_id: Mapped[int] = mapped_column(ForeignKey("user_table.id"))
+    usermodel: Mapped["UserModel"] = relationship(back_populates="tasksmodel") # access UserModel data from TasksModel with 'tasks'
 

@@ -4,7 +4,7 @@ from fastapi import Depends
 
 from typing import Annotated
 
-engine = create_engine("postgresql+psycopg2://postgres@localhost:5432/todo",echo=True)
+engine = create_engine("postgresql+psycopg2://postgres@localhost:5432/crawlertask",echo=True)
 
 SessionLocal = sessionmaker(autoflush=False,bind=engine,autocommit=False)
 

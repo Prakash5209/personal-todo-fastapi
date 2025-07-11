@@ -151,3 +151,27 @@ class UpdateEmail:
     def __str__(self):
         return str(self.payload)
 
+
+
+class DeleteUser:
+    """
+    this is just for clearing the database to test.
+
+    created to clear the database user and it's tasks (childs)
+
+    warning: simply putting id will delete the user and it's task (child)
+    """
+    def __init__(self,id,db):
+        self.id = id
+        self.db = db
+
+    def userdelete(self):
+        that_user = self.db.query(UserModel).get(self.id)
+        if not that_user:
+            raise HTTPException(
+                status_code=status.HTTP_404_NOT_FOUND,
+                detail="user not found"
+                )
+        self.db.delete(that_user)
+        self.db.commit()
+        return {"status": 200, "message": "User deleted successfully"}

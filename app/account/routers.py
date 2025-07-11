@@ -2,7 +2,7 @@ from fastapi import APIRouter,Depends
 
 from database import db_dependency
 from app.account.schemas import Account_creation_schema, EmailOnlySchema,GetTokenSchema
-from app.account.services.account_service import AccountCreate,GetToken,UpdateEmail
+from app.account.services.account_service import AccountCreate, DeleteUser,GetToken,UpdateEmail
 from app.tokenparser import parse_token
 
 
@@ -29,4 +29,15 @@ def update_email(schema: EmailOnlySchema,db: db_dependency, payload:dict = Depen
     obj = UpdateEmail(data = payload,schema = schema,db = db)
     update_email = obj.updateEmail()
     return update_email
+
+
+# warning id is enough to delete user. MORE EXPLAINATION IN DeleteUser class
+# app.account.services.account_service
+@router.delete("/delete-user/{id}",)
+def delete_user(id: int, db: db_dependency):
+    deleteuser_obj = DeleteUser(id,db)
+    output = deleteuser_obj.userdelete()
+    return output
+    
+
 

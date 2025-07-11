@@ -20,7 +20,7 @@ class TaskCreation:
         except Exception as e:
             # print(e)
             self.db.rollback()
-            return HTTPException(status_code = 400,detail="error while creating todo")
+            return HTTPException(status_code = 400,detail="error while creating todo, invalid token")
 
 
 class GetTask:

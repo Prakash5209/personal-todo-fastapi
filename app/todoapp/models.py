@@ -1,4 +1,4 @@
-from sqlalchemy import Boolean, DateTime, ForeignKey, String
+from sqlalchemy import Boolean, DateTime, ForeignKey, Text
 from sqlalchemy.orm import mapped_column,Mapped, relationship
 import datetime
 from typing import TYPE_CHECKING
@@ -24,7 +24,7 @@ class TasksModel(Base,TimeStamp): # inheritating TimeStamp - auto manages Timest
     __tablename__ = "task_model"
 
     id: Mapped[int] = mapped_column(primary_key=True)
-    task: Mapped[str] = mapped_column(String(255))
+    task: Mapped[str] = mapped_column(Text)
     is_completed: Mapped[bool] = mapped_column(Boolean,default=False)
 
     user_id: Mapped[int] = mapped_column(ForeignKey("user_table.id"))

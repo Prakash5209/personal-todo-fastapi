@@ -76,7 +76,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NDMsImVtYWlsIjoicHJha2FzaGtjaGF1ZGhhcnk1MjA5QGdtYWlsLmNvbSIsImV4cCI6MTc1MjI1MDE0NH0.VSXAPQIfYXHdhFGtTyK-fVx-71HKvbnBYJqCJrJitW0",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NDQsImVtYWlsIjoicHJha2FzaGtjaGF1ZGhhcnk1MjA5QGdtYWlsLmNvbSIsImV4cCI6MTc1MjI1MzQ3Nn0.p4gfEEHOtd34x4MxuKJwogy2W_B6KIp2khVTR6IC3VA",
 							"type": "string"
 						}
 					]
@@ -114,7 +114,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NDMsImVtYWlsIjoicHJha2FzaGtjaGF1ZGhhcnk1MjA5QGdtYWlsLmNvbSIsImV4cCI6MTc1MjI1MDE0NH0.VSXAPQIfYXHdhFGtTyK-fVx-71HKvbnBYJqCJrJitW0",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NDQsImVtYWlsIjoicHJha2FzaGtjaGF1ZGhhcnk1MjA5QGdtYWlsLmNvbSIsImV4cCI6MTc1MjI1MzQ3Nn0.p4gfEEHOtd34x4MxuKJwogy2W_B6KIp2khVTR6IC3VA",
 							"type": "string"
 						}
 					]
@@ -155,7 +155,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NDIsImVtYWlsIjoicHJha2FzaGtjaGF1ZGhhcnk1MjA5QGdtYWlsLmNvbSIsImV4cCI6MTc1MjI0ODIzMH0.642c-6phLSupUpSbysXFvjAX8_7w1yj_0UWNYmbCmF8",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NDQsImVtYWlsIjoicHJha2FzaGtjaGF1ZGhhcnk1MjA5QGdtYWlsLmNvbSIsImV4cCI6MTc1MjI1MzQ3Nn0.p4gfEEHOtd34x4MxuKJwogy2W_B6KIp2khVTR6IC3VA",
 							"type": "string"
 						}
 					]
@@ -203,7 +203,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NDMsImVtYWlsIjoicHJha2FzaGtjaGF1ZGhhcnk1MjA5QGdtYWlsLmNvbSIsImV4cCI6MTc1MjI1MDE0NH0.VSXAPQIfYXHdhFGtTyK-fVx-71HKvbnBYJqCJrJitW0",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NDQsImVtYWlsIjoicHJha2FzaGtjaGF1ZGhhcnk1MjA5QGdtYWlsLmNvbSIsImV4cCI6MTc1MjI1MzQ3Nn0.p4gfEEHOtd34x4MxuKJwogy2W_B6KIp2khVTR6IC3VA",
 							"type": "string"
 						}
 					]
@@ -220,7 +220,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8000/delete-task/37",
+					"raw": "http://localhost:8000/delete-task/39",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -228,7 +228,7 @@
 					"port": "8000",
 					"path": [
 						"delete-task",
-						"37"
+						"39"
 					]
 				}
 			},
@@ -242,12 +242,12 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NDMsImVtYWlsIjoicHJha2FzaGtjaGF1ZGhhcnk1MjA5QGdtYWlsLmNvbSIsImV4cCI6MTc1MjI1MDE0NH0.VSXAPQIfYXHdhFGtTyK-fVx-71HKvbnBYJqCJrJitW0",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NDQsImVtYWlsIjoicHJha2FzaGtjaGF1ZGhhcnk1MjA5QGdtYWlsLmNvbSIsImV4cCI6MTc1MjI1MzQ3Nn0.p4gfEEHOtd34x4MxuKJwogy2W_B6KIp2khVTR6IC3VA",
 							"type": "string"
 						}
 					]
 				},
-				"method": "PUT",
+				"method": "PATCH",
 				"header": [],
 				"body": {
 					"mode": "raw",
@@ -259,7 +259,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8000/update-task/38",
+					"raw": "http://localhost:8000/update-task/39",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -267,7 +267,7 @@
 					"port": "8000",
 					"path": [
 						"update-task",
-						"38"
+						"39"
 					]
 				}
 			},
@@ -279,7 +279,7 @@
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8000/delete-user/38",
+					"raw": "http://localhost:8000/delete-user/43",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -287,7 +287,7 @@
 					"port": "8000",
 					"path": [
 						"delete-user",
-						"38"
+						"43"
 					]
 				}
 			},

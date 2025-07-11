@@ -38,33 +38,38 @@ class GetTask:
 
 
 
+
 class UpdateTask:
-    def __init__(self,id,schema,payload,db):
+    def __init__(self, id, schema, payload, db):
         self.id = id
         self.schema = schema
         self.payload = payload
         self.db = db
 
     def taskupdate(self):
-
-        # retrieve 1 TasksModel of user with taskmodel id
+        # Fetch the task belonging to the authenticated user
         that_task = self.db.query(TasksModel).filter(
             TasksModel.user_id == self.payload.get("id"),
             TasksModel.id == self.id
         ).first()
 
-        that_task.task = self.schema.task # updating task
-        that_task.is_completed = self.schema.is_completed # updating bool value
+        if not that_task:
+            raise HTTPException(status_code=404, detail="Task not found")
 
-        # save the changes else raise 500 error
+        # Partial update logic
+        if self.schema.task is not None:
+            that_task.task = self.schema.task
+
+        if self.schema.is_completed is not None:
+            that_task.is_completed = self.schema.is_completed # Commit changes
         try:
             self.db.commit()
             self.db.refresh(that_task)
             return that_task
-            # return {"status_code":200,"content":"task updated"}
         except:
             self.db.rollback()
-            raise HTTPException(status_code=500,detail="failed to update")
+            raise HTTPException(status_code=500, detail="Failed to update")
+
 
 
 class DeleteTask:

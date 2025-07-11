@@ -37,9 +37,11 @@ def delete_task(id: int, db: db_dependency, payload: dict = Depends(parse_token)
     result = deletetask_obj.taskdelete()
     return result
 
+
 # update todo instance with id
-@router.put("/update-task/{id}")
-def update_task(id: int,schema: UpdateTaskSchema,db: db_dependency,payload: dict = Depends(parse_token)):
-    updatetask_obj = UpdateTask(id,schema,payload,db)
+@router.patch("/update-task/{id}")
+def update_task(id: int, schema: UpdateTaskSchema, db: db_dependency, payload: dict = Depends(parse_token)):
+    updatetask_obj = UpdateTask(id, schema, payload, db)
     result = updatetask_obj.taskupdate()
     return result
+

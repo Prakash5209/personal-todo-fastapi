@@ -1,5 +1,5 @@
 from pydantic import BaseModel
-
+from typing import Optional
 
 # use for validation while creating new task
 class CreateTaskSchema(BaseModel):
@@ -14,5 +14,5 @@ class TaskListScheme(BaseModel):
 
 # use for validating email for updation
 class UpdateTaskSchema(BaseModel):
-    task: str
-    is_completed: bool
+    task: Optional[str] = None
+    is_completed: Optional[bool] = None

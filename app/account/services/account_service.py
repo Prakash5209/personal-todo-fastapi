@@ -79,13 +79,13 @@ class AccountCreate:
 
     def create_account(self):
 
-        # removing/striping the whitespace at last and last
+        # removing/striping the whitespace at first and last
         full_name = self.schema.full_name.strip()
         email = self.schema.email.strip()
         raw_password = self.schema.password.strip()
 
 
-        # checking is email and password is valid
+        # checking if email and password is valid
         is_email = is_valid_email(email=email)
         is_password = is_valid_password(password=raw_password)
 
@@ -100,7 +100,7 @@ class AccountCreate:
         # bcrypting password
         password = hash_password(password=raw_password)
 
-        # creating new model object -an instance of the UserModl
+        # creating new model object -an instance of the UserModel
         new_account = UserModel(full_name = full_name,email = email, password=password)
         self.db.add(new_account) # adding instance to session
         try:

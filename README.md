@@ -242,7 +242,7 @@ Authorization: Bearer <jwt_token>
 
 ### 📌 3. Update a todo
 
-**Endpoint:** `PUT /update-todo/{id}`
+**Endpoint:** `PATCH  /update-todo/{id}`
 
 **Description:** Updates a todo (both content and completion status) of the authenticated user.
 

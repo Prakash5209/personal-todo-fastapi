@@ -1,4 +1,8 @@
-### Postman collection is in the repository!
+# Before starting
+1. Postman collection is in the repository!  
+2. set the database name to: crawlertask  or configure sqlalchemy.url in alembic.ini like this: ⬇      (if you need to change the database name)  
+sqlalchemy.url = postgresql+psycopg2://postgres@localhost/crawlertask
+
 
 ## 🚀 Installation
 
@@ -37,6 +41,10 @@ JWT_ALGORITHM=HS256
 > Replace `your_user`, `your_password`, `your_db`, and `your_jwt_secret` with actual values.
 
 ### 5. Run Alembic migrations
+
+```bash
+alembic revision --autogenerate -m "first migrations"
+```
 
 ```bash
 alembic upgrade head

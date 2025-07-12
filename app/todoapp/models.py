@@ -6,6 +6,7 @@ from typing import TYPE_CHECKING
 
 from database import Base
 
+# To avoid python circular import issue
 if TYPE_CHECKING:
     from app.account.models import UserModel
 

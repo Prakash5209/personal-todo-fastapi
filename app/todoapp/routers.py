@@ -1,8 +1,7 @@
-from fastapi import APIRouter,Depends,HTTPException,status
+from fastapi import APIRouter,Depends
 
 from database import db_dependency
 from app.todoapp.schemas import CreateTaskSchema, TaskListScheme
-from app.todoapp.models import TasksModel
 from app.todoapp.services.todo_service import DeleteTask, TaskCreation,GetTask, UpdateTask
 from app.tokenparser import parse_token
 from app.todoapp.schemas import UpdateTaskSchema
@@ -33,7 +32,7 @@ def get_task(skip: int,limit: int ,db: db_dependency, payload: dict = Depends(pa
 # remove task with task id and user's task 
 @router.delete("/delete-task/{id}")
 def delete_task(id: int, db: db_dependency, payload: dict = Depends(parse_token)):
-    deletetask_obj = DeleteTask(id,db,payload)
+    deletetask_obj = DeleteTask(id = id,db = db, payload = payload)
     result = deletetask_obj.taskdelete()
     return result
 
@@ -41,7 +40,7 @@ def delete_task(id: int, db: db_dependency, payload: dict = Depends(parse_token)
 # update todo instance with id
 @router.patch("/update-task/{id}")
 def update_task(id: int, schema: UpdateTaskSchema, db: db_dependency, payload: dict = Depends(parse_token)):
-    updatetask_obj = UpdateTask(id, schema, payload, db)
+    updatetask_obj = UpdateTask(id = id, schema = schema, payload = payload, db = db)
     result = updatetask_obj.taskupdate()
     return result
 

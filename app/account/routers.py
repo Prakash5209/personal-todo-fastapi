@@ -11,7 +11,7 @@ router = APIRouter()
 # get the access jwt token using email and password
 @router.post("/get-token")
 def get_token(schema: GetTokenSchema,db: db_dependency):
-    df = GetToken(schema,db=db)
+    df = GetToken(schema = schema,db = db)
     to_dict = df.to_dict()
     return to_dict
 
@@ -35,7 +35,7 @@ def update_email(schema: EmailOnlySchema,db: db_dependency, payload:dict = Depen
 # app.account.services.account_service
 @router.delete("/delete-user/{id}",)
 def delete_user(id: int, db: db_dependency):
-    deleteuser_obj = DeleteUser(id,db)
+    deleteuser_obj = DeleteUser(id = id,db = db)
     output = deleteuser_obj.userdelete()
     return output
     

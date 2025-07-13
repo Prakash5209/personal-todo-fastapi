@@ -11,6 +11,8 @@ if TYPE_CHECKING:
     from app.account.models import UserModel
 
 
+
+# Abstract (Mixin) class
 class TimeStamp:
     created_at: Mapped[DateTime] = mapped_column(
         DateTime(timezone=True),default=datetime.datetime.now(datetime.timezone.utc)
